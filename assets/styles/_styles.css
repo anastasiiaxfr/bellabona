@@ -1,0 +1,26 @@
+.section {
+  @apply my-10 lg:my-20 xl:my-[80px];
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+.btn-main {
+  @apply rounded-full px-[24px] py-[11px] min-h-[48px] text-[18px];
+}
+
+.faq {
+  @apply text-cstm-green-2 text-base lg:text-2xl;
+  button {
+    @apply py-6 text-lg sm:text-xl lg:text-2xl  font-medium hover:no-underline;
+  }
+
+  h3 {
+    @apply text-main mb-0;
+  }
+
+  h3 + div {
+    @apply text-base sm:text-lg lg:text-xl pb-6;
+  }
+}

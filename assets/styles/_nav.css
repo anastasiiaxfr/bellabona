@@ -1,0 +1,41 @@
+.header {
+  @apply my-[20px] text-[18px];
+
+  .container {
+    @apply flex flex-nowrap gap-4 items-center justify-between;
+  }
+
+  a {
+    @apply text-[18px] font-normal;
+  }
+}
+
+.navbar {
+  @apply flex gap-x-10 gap-y-2 items-center;
+
+  a {
+    @apply cursor-pointer px-0 py-1 hover:underline;
+  }
+}
+
+.footer {
+  @apply bg-cstm-green-1 text-white pt-10 lg:pt-[100px] relative;
+
+  h4 {
+    @apply text-white font-bold mb-4 text-2xl;
+  }
+
+  nav {
+    @apply grid gap-3;
+
+    a {
+      @apply hover:underline hover:text-cstm-secondary;
+    }
+  }
+}
+.footer-btm {
+  @apply py-4;
+}
+.footer-mdl {
+  @apply mt-4 py-10 sm:py-20 lg:py-40 relative;
+}

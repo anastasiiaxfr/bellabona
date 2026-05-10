@@ -1,0 +1,23 @@
+@layer base {
+  html,
+  body {
+    @apply flex flex-col min-h-full;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  body,
+  .page {
+    @apply flex-1 flex flex-col;
+  }
+
+  .page > main {
+    @apply flex-1 py-8;
+  }
+
+  .container {
+    @apply mx-auto px-8 max-w-[1280px];
+  }
+}
