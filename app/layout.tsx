@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "@/assets/styles/globals.css";
 import Layout from "@/components/layout/index";
+import { LangProvider } from "@/components/providers/LangProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const figtree = Figtree({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-figtree",
+  display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "Offer Daily Lunch To Build Culture & Cut Costs | Bella&Bona",
   description:
@@ -54,10 +51,7 @@ export default function RootLayout({
   };
 
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${figtree.variable} h-full antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -68,7 +62,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <Layout>{children}</Layout>
+        <LangProvider>
+          <Layout>{children}</Layout>
+        </LangProvider>
       </body>
     </html>
   );

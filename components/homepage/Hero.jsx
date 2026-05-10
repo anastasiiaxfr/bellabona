@@ -1,27 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { client } from "@/lib/sanity";
+import imageUrlBuilder from "@sanity/image-url";
 
-function Hero() {
+const builder = imageUrlBuilder(client);
+const urlFor = (source) =>
+  source ? builder.image(source).auto("format").url() : null;
+
+async function Hero() {
+  const data = await client.fetch(
+    `*[_type == "home-hero" && language == de][0]{title, subtitle, image, ctaButtonText, ctaButtonLink}`,
+  );
+
   return (
     <section className="section section-hero mt-0!">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           <div className="h-full">
             <article className="bg-cstm-green-1 rounded-xl p-10 text-cstm-secondary grid h-full">
-              <h1 className="mb-10">
-                Offer Lunch to Build Culture & Cut Costs
-              </h1>
+              <h1 className="mb-10">{data?.title}</h1>
               <div className="mt-auto">
-                <p className="mb-4">
-                  30+ fresh, chef-made meals weekly, delivered straight to the
-                  office, employees order via app – all diets, no admin
-                </p>
+                <p className="mb-4">{data?.subtitle}</p>
                 <Button
                   asChild
                   className="btn-main bg-cstm-secondary text-cstm-green-1 hover:bg-main hover:text-white w-full sm:w-auto"
                 >
-                  <Link href="#">Book a free team lunch</Link>
+                  <Link href={data?.ctaButtonLink} target="_blank">
+                    {data?.ctaButtonText}
+                  </Link>
                 </Button>
               </div>
             </article>
@@ -29,10 +36,10 @@ function Hero() {
           <div>
             <div className="relative lg:grid">
               <Image
-                src="/img/homepage/img0.jpg"
+                src={urlFor(data?.image)}
                 alt=""
-                width="623"
-                height="697"
+                width={623}
+                height={697}
                 className="w-full aspect-square rounded-xl object-cover [grid-area:1/1/2/2] "
                 fetchPriority="hight"
               />

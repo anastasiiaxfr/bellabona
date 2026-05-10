@@ -13,7 +13,7 @@ import { ChevronDown } from "lucide-react";
 
 function NavBar({ direction }) {
   return (
-    <nav className={`navbar ${direction === "col" && "flex-col !items-start"}`}>
+    <div className={`navbar ${direction === "col" && "flex-col !items-start"}`}>
       <Link href="#">Daily lunch</Link>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -34,7 +34,7 @@ function NavBar({ direction }) {
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
-    </nav>
+    </div>
   );
 }
 

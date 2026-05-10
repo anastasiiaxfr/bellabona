@@ -24,3 +24,19 @@ button {
     @apply text-base sm:text-lg lg:text-xl pb-6;
   }
 }
+
+.rc-slider-mark-text {
+  @apply max-w-6 md:text-nowrap lg:max-w-full;
+}
+
+.picker-days {
+  @apply mt-4;
+
+  [data-slot="field-label"] {
+    @apply md:text-6xl font-medium border-cstm-green-1 rounded-sm;
+  }
+
+  [role="group"] * {
+    @apply text-center! mx-auto text-cstm-green-1;
+  }
+}

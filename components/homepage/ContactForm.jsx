@@ -3,39 +3,43 @@ import Link from "next/link";
 
 import Form from "@/components/forms/Form-1";
 
-function ContactForm() {
+import { client } from "@/lib/sanity";
+import imageUrlBuilder from "@sanity/image-url";
+
+const builder = imageUrlBuilder(client);
+const urlFor = (source) =>
+  source ? builder.image(source).auto("format").url() : null;
+
+async function ContactForm() {
+  const data = await client.fetch(
+    `*[_type == "home-contact-form" && language == de][0]{title, description, name, email, phone, image}`,
+  );
+
   return (
     <section className="section section-cta-form">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <article className="bg-cstm-green-1 text-cstm-green-3 rounded-xl p-10">
-              <h2 className="text-cstm-green-3">
-                Got Questions? Let’s Talk Lunch.
-              </h2>
-              <p className="mb-10">
-                Straightforward answers on pricing, setup and whether Bella&Bona
-                fits your office – we're here to help.
-              </p>
+              <h2 className="text-cstm-green-3">{data?.title}</h2>
+              <p className="mb-10">{data?.description}</p>
               <div className="mt-auto flex gap-4 items-end">
                 <Image
-                  src="/img/homepage/ava1.jpg"
-                  alt=""
+                  src={urlFor(data?.image)}
+                  alt={data?.name}
                   width="230"
                   height="205"
                   className="rounded-lg aspect-square"
                 />
                 <div>
                   <p>
-                    <b>Sara Dorofeev</b>
+                    <b>{data?.name}</b>
                   </p>
                   <p>
-                    <Link href="mailto:sara@bellabona.com">
-                      sara@bellabona.com
-                    </Link>
+                    <Link href={`mailto:${data?.email}`}>{data?.email}</Link>
                   </p>
                   <p>
-                    <Link href="tel:+4915129605077">+49 151 2960 5077</Link>
+                    <Link href={`tel:${data?.phone}`}>{data?.phone}</Link>
                   </p>
                 </div>
               </div>

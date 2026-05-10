@@ -1,8 +1,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-sans);
+  --font-heading: var(--font-figtree);
+  --font-sans: var(--font-figtree);
   --color-main: #1a211e;
   --color-cstm-secondary: #e6ffa9;
   --color-cstm-green-1: #024930;

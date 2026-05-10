@@ -89,7 +89,7 @@ function Form() {
       <div className="mt-3">
         <Button
           type="submit"
-          className="btn-main bg-cstm-green-4 max-w-[424px] w-full hover:text-white hover:bg-cstm-green-1"
+          className="btn-main bg-cstm-green-4 max-w-106 w-full hover:text-white hover:bg-cstm-green-1"
         >
           Request a free quote
         </Button>

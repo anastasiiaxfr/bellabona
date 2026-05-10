@@ -1,0 +1,28 @@
+{
+  "name": "bellabona",
+  "version": "1.0.0",
+  "description": "A project for managing content with Sanity Studio.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "keywords": [
+    "sanity",
+    "content",
+    "cms"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@sanity/client": "^2.0.0",
+    "@sanity/vision": "^2.0.0",
+    "sanity": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-prettier": "^4.0.0"
+  }
+}

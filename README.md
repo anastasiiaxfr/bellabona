@@ -5,7 +5,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
+rm -rf .next
+rm -rf node_modules/.cache
+rm -rf .turbo
+npm run dev --turbopack --no-turbo
 # or
 yarn dev
 # or
