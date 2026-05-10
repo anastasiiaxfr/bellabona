@@ -10,7 +10,7 @@ const urlFor = (source) =>
 
 async function Hero() {
   const data = await client.fetch(
-    `*[_type == "home-hero" && language == de][0]{title, subtitle, image, ctaButtonText, ctaButtonLink}`,
+    `*[_type == "home-hero"][0]{title, subtitle, image, ctaButtonText, ctaButtonLink}`,
   );
 
   return (

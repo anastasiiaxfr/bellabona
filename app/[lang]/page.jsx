@@ -10,26 +10,40 @@ import Brands from "@/components/homepage/Brands";
 import Hero from "@/components/homepage/Hero";
 import Services from "@/components/homepage/Services";
 import Calculator from "@/components/homepage/Calculator";
+
 import { client } from "@/lib/sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
 const builder = imageUrlBuilder(client);
+
 const urlFor = (source) =>
   source ? builder.image(source).auto("format").url() : null;
 
-export default async function Home() {
+export default async function Home({ params }) {
+  const { lang } = await params;
+
   const ctas = await client.fetch(
-    `*[_type == "home-cta" && language == de]{title, description, image, ctaButtonText, ctaButtonLink, type}`,
+    `*[_type == "home-cta" && language == $lang] | order(_createdAt asc){
+      title,
+      description,
+      image,
+      ctaButtonText,
+      ctaButtonLink,
+      type
+    }`,
+    { lang },
   );
 
   return (
     <>
-      <Hero />
-      <Brands />
-      <Metrics />
-      <Services />
-      <Stat />
-      <Benefits />
+      <Hero language={lang} />
+
+      <Brands language={lang} />
+      <Metrics language={lang} />
+      <Services language={lang} />
+      <Stat language={lang} />
+      <Benefits language={lang} />
+
       <CTA
         type={ctas?.[0]?.type || "success"}
         title={ctas?.[0]?.title}
@@ -38,10 +52,15 @@ export default async function Home() {
         btn={ctas?.[0]?.ctaButtonText}
         href={ctas?.[0]?.ctaButtonLink || "#"}
       />
-      <STR />
+
+      <STR language={lang} />
+
       <Calculator />
-      <Reviews />
-      <ContactForm />
+
+      <Reviews language={lang} />
+
+      <ContactForm language={lang} />
+
       <CTA
         type={ctas?.[1]?.type || "success"}
         title={ctas?.[1]?.title}
@@ -50,7 +69,8 @@ export default async function Home() {
         btn={ctas?.[1]?.ctaButtonText}
         href={ctas?.[1]?.ctaButtonLink || "#"}
       />
-      <FAQ />
+
+      <FAQ language={lang} />
     </>
   );
 }

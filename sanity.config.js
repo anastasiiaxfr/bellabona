@@ -13,6 +13,7 @@ import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
 import { documentInternationalization } from "@sanity/document-internationalization";
+import { internationalizedArray } from "sanity-plugin-internationalized-array";
 
 export default defineConfig({
   basePath: "/studio",
@@ -34,6 +35,24 @@ export default defineConfig({
       weakReferences: true,
       bulkPublish: true,
       hideLanguageFilter: true,
+    }),
+    internationalizedArray({
+      languages: [
+        { id: "en", title: "English" },
+        { id: "de", title: "German" },
+      ],
+
+      defaultLanguages: ["en"],
+      fieldTypes: ["string"],
+      languageFilter: {
+        documentTypes: ["internationalizedPost", "lesson"],
+      },
+      select: {
+        options: [
+          { title: "Europe", languages: ["en", "de"] },
+          { title: "Americas", languages: ["en"] },
+        ],
+      },
     }),
   ],
 });

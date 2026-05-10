@@ -6,6 +6,16 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
+      name: "language",
+      type: "string",
+      options: {
+        list: [
+          { title: "English", value: "en" },
+          { title: "German", value: "de" },
+        ],
+      },
+    }),
+    defineField({
       name: "type",
       title: "Type",
       type: "string",

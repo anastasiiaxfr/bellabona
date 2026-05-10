@@ -4,7 +4,18 @@ export default defineType({
   name: "home-brands",
   title: "Homepage Brands",
   type: "document",
+
   fields: [
+    defineField({
+      name: "language",
+      type: "string",
+      options: {
+        list: [
+          { title: "English", value: "en" },
+          { title: "German", value: "de" },
+        ],
+      },
+    }),
     defineField({
       name: "title",
       title: "Title",

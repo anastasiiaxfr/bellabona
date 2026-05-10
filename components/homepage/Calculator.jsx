@@ -26,7 +26,7 @@ const marksEmployees = {
   250: "250",
 };
 
-const mealMarks = {
+const subsidyMarks = {
   3: "3 €",
   4: "4 €",
   5: "5 €",
@@ -139,24 +139,20 @@ function Calculator() {
             />
           </div>
 
-          <div className="my-8 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.5fr]">
-            <div>
-              <p className="grid grid-cols-[30px_1fr] gap-4 text-2xl">
-                <UsersRound size={30} />
-                How much of each meal will your company cover?
-              </p>
+          <div className="my-8 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10">
+            <div className="flex gap-3 text-2xl">
+              <UsersRound size={30} />
+              Company meal subsidy
             </div>
 
-            <div className="mb-10 relative">
-              <Slider
-                min={3}
-                max={10}
-                step={1}
-                marks={mealMarks}
-                value={subsidy}
-                onChange={(v) => setSubsidy(v)}
-              />
-            </div>
+            <Slider
+              min={3}
+              max={10}
+              step={1}
+              marks={subsidyMarks}
+              value={subsidy}
+              onChange={(v) => setSubsidy(v)}
+            />
           </div>
 
           <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-10">
