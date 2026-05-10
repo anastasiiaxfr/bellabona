@@ -10,9 +10,19 @@ const builder = imageUrlBuilder(client);
 const urlFor = (source) =>
   source ? builder.image(source).auto("format").url() : null;
 
-async function ContactForm() {
+async function ContactForm({ language }) {
   const data = await client.fetch(
-    `*[_type == "home-contact-form" && language == de][0]{title, description, name, email, phone, image}`,
+    `*[_type == "home-contact-form" && language == $language][0]{
+      title,
+      description,
+      name,
+      email,
+      phone,
+      image{
+        asset->
+      }
+    }`,
+    { language },
   );
 
   return (
@@ -25,7 +35,7 @@ async function ContactForm() {
               <p className="mb-10">{data?.description}</p>
               <div className="mt-auto flex gap-4 items-end">
                 <Image
-                  src={urlFor(data?.image)}
+                  src={urlFor(data?.image.asset)}
                   alt={data?.name}
                   width="230"
                   height="205"

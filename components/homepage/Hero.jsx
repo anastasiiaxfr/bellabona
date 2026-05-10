@@ -8,9 +8,30 @@ const builder = imageUrlBuilder(client);
 const urlFor = (source) =>
   source ? builder.image(source).auto("format").url() : null;
 
-async function Hero() {
+async function Hero({ language }) {
+  console.log(language);
   const data = await client.fetch(
-    `*[_type == "home-hero"][0]{title, subtitle, image, ctaButtonText, ctaButtonLink}`,
+    `*[_type == "home-hero" && language == $language][0]{
+    language,
+    title,
+    subtitle,
+    image,
+    ctaButtonText,
+    ctaButtonLink,
+
+    "_translations": *[
+      _type == "translation.metadata" &&
+      references(^._id)
+    ].translations[].value->{
+      title,
+      subtitle,
+      image,
+      ctaButtonText,
+      ctaButtonLink,
+      language
+    }
+  }`,
+    { language },
   );
 
   return (
@@ -26,7 +47,7 @@ async function Hero() {
                   asChild
                   className="btn-main bg-cstm-secondary text-cstm-green-1 hover:bg-main hover:text-white w-full sm:w-auto"
                 >
-                  <Link href={data?.ctaButtonLink} target="_blank">
+                  <Link href={data?.ctaButtonLink || "#"} target="_blank">
                     {data?.ctaButtonText}
                   </Link>
                 </Button>

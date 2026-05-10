@@ -30,7 +30,19 @@ export default defineConfig({
         { id: "en", title: "English" },
         { id: "de", title: "German" },
       ],
-      schemaTypes: ["home-hero", "home-faq"],
+      schemaTypes: [
+        "home-brands",
+        "home-contact-form",
+        "home-cta",
+        "home-faq",
+        "home-features",
+        "home-hero",
+        "home-metrics",
+        "home-review",
+        "home-services",
+        "home-stats",
+        "home-steps",
+      ],
       languageField: `language`,
       weakReferences: true,
       bulkPublish: true,
@@ -45,7 +57,7 @@ export default defineConfig({
       defaultLanguages: ["en"],
       fieldTypes: ["string"],
       languageFilter: {
-        documentTypes: ["internationalizedPost", "lesson"],
+        documentTypes: ["internationalizedPost"],
       },
       select: {
         options: [

@@ -24,15 +24,19 @@ export default async function Home({ params }) {
 
   const ctas = await client.fetch(
     `*[_type == "home-cta" && language == $lang] | order(_createdAt asc){
-      title,
-      description,
-      image,
-      ctaButtonText,
-      ctaButtonLink,
-      type
-    }`,
+    title,
+    description,
+    image{
+      asset->
+    },
+    ctaButtonText,
+    ctaButtonLink,
+    type
+  }`,
     { lang },
   );
+
+  console.log("CTAs:", ctas);
 
   return (
     <>
@@ -45,12 +49,12 @@ export default async function Home({ params }) {
       <Benefits language={lang} />
 
       <CTA
-        type={ctas?.[0]?.type || "success"}
-        title={ctas?.[0]?.title}
-        description={ctas?.[0]?.description}
-        img={urlFor(ctas?.[0]?.image)}
-        btn={ctas?.[0]?.ctaButtonText}
-        href={ctas?.[0]?.ctaButtonLink || "#"}
+        type={ctas?.[1]?.type || "success"}
+        title={ctas?.[1]?.title}
+        description={ctas?.[1]?.description}
+        img={urlFor(ctas?.[1]?.image)}
+        btn={ctas?.[1]?.ctaButtonText}
+        href={ctas?.[1]?.ctaButtonLink || "#"}
       />
 
       <STR language={lang} />
@@ -62,12 +66,12 @@ export default async function Home({ params }) {
       <ContactForm language={lang} />
 
       <CTA
-        type={ctas?.[1]?.type || "success"}
-        title={ctas?.[1]?.title}
-        description={ctas?.[1]?.description}
-        img={urlFor(ctas?.[1]?.image)}
-        btn={ctas?.[1]?.ctaButtonText}
-        href={ctas?.[1]?.ctaButtonLink || "#"}
+        type={ctas?.[0]?.type || "success"}
+        title={ctas?.[0]?.title}
+        description={ctas?.[0]?.description}
+        img={urlFor(ctas?.[0]?.image)}
+        btn={ctas?.[0]?.ctaButtonText}
+        href={ctas?.[0]?.ctaButtonLink || "#"}
       />
 
       <FAQ language={lang} />

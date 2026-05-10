@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.bellabona.de
+
+# Sitemaps
+Sitemap: https://www.bellabona.de/sitemap.xml

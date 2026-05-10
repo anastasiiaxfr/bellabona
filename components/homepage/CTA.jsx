@@ -25,13 +25,15 @@ function CTA({ type, title, description = "", img, btn, href }) {
             </Button>
           </div>
           <div>
-            <Image
-              src={img}
-              width="449"
-              height="318"
-              alt=""
-              className="aspect-2/1 w-full lg:w-auto h-full rounded-lg lg:ml-auto"
-            />
+            {img && (
+              <Image
+                src={img}
+                width={449}
+                height={318}
+                alt=""
+                className="aspect-2/1 w-full lg:w-auto h-full rounded-lg lg:ml-auto"
+              />
+            )}
           </div>
         </div>
       </div>
