@@ -62,7 +62,8 @@ async function Hero({ language }) {
                 width={623}
                 height={697}
                 className="w-full aspect-square rounded-xl object-cover [grid-area:1/1/2/2] "
-                fetchPriority="hight"
+                fetchpriority="high"
+                priority
               />
               <div className="[grid-area:1/1/2/2] xl:mt-auto grid grid-cols-3 items-center gap-4 justify-center p-6 mt-auto">
                 <Link href="#" traget="_blank">
@@ -71,7 +72,7 @@ async function Hero({ language }) {
                     alt="Google Pay"
                     width="202"
                     height="60"
-                    fetchPriority="hight"
+                    priority
                     className="aspect-2/0.5 object-cover rounded-lg w-full h-auto"
                   />
                 </Link>
@@ -82,7 +83,7 @@ async function Hero({ language }) {
                     alt="App Store"
                     width="180"
                     height="60"
-                    fetchPriority="hight"
+                    priority
                     className="aspect-2/0.5 object-cover rounded-lg w-full h-auto"
                   />
                 </Link>
@@ -93,7 +94,7 @@ async function Hero({ language }) {
                     alt="Google Plus"
                     width="160"
                     height="60"
-                    fetchPriority="hight"
+                    priority
                     className="aspect-2/0.5 object-cover rounded-lg w-full h-auto"
                   />
                 </Link>

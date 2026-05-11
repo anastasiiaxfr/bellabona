@@ -15,7 +15,7 @@ async function Benefits() {
   return (
     <section className="section section-benefits">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           <div>
             <Image
               src={urlFor(data?.image)}
@@ -25,8 +25,8 @@ async function Benefits() {
               className="w-full aspect-2/1.25 rounded-xl object-cover"
             />
           </div>
-          <div>
-            <div className="bg-ctsm-grey-4 rounded-2xl p-10">
+          <div children="h-full">
+            <div className="bg-ctsm-grey-4 rounded-2xl p-10 h-full">
               <ul className="grid gap-8">
                 {data?.features?.map((feature, index) => (
                   <li className="grid grid-cols-[30px_1fr] gap-4" key={index}>

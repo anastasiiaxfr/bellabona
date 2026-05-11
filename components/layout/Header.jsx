@@ -32,7 +32,7 @@ function Header() {
           </div>
           <div className="flex gap-2 items-center">
             <LangSwitcher />
-            <div className="lg:hidden">
+            <div className="lg:hidden flex items-center">
               <Drawer />
             </div>
           </div>

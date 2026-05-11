@@ -51,8 +51,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${figtree.variable} h-full antialiased`}>
-      <head>
+    <>
         <script
           type="application/ld+json"
           // JSON.stringify ensures valid JSON inside the script
@@ -60,12 +59,14 @@ export default function RootLayout({
             __html: JSON.stringify(organization),
           }}
         />
-      </head>
-      <body className="min-h-full flex flex-col">
+      
+     
         <LangProvider>
           <Layout>{children}</Layout>
         </LangProvider>
-      </body>
-    </html>
+      
+    </>
+    
+
   );
 }

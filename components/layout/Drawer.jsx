@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -23,31 +22,30 @@ function Drawer() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon">
-          <MenuIcon className="w-5 h-5" />
-        </Button>
+
+        <MenuIcon className="w-5 h-5" title="menu"/>
+
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
             <Logo />
           </SheetTitle>
-          <SheetDescription className="my-4 flex flex-col gap-3">
+          <div className="my-4 flex flex-col gap-3">
             <NavBar direction="col" />
-          </SheetDescription>
+          </div>
         </SheetHeader>
-        <SheetFooter>
-          <SheetClose asChild className="grid gap-4">
-            <Button
-              asChild
-              variant="link"
-              className="underline hover:no-underline"
-            >
-              <Link href="/">Download menu</Link>
-            </Button>
-            <Button asChild className="btn-main">
-              <Link href="/">Book free testing</Link>
-            </Button>
+        <SheetFooter className="grid gap-4">
+          <SheetClose asChild>
+            <Link href="/" className="underline hover:no-underline">
+              Download menu
+            </Link>
+          </SheetClose>
+
+          <SheetClose asChild>
+            <Link href="/" className="btn-main bg-main text-white hover:bg-cstm-secondary hover:text-main transition">
+              Book free testing
+            </Link>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

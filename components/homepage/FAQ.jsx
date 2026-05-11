@@ -37,7 +37,6 @@ async function FAQ() {
 
           <Accordion
             type="single"
-            collapsible
             defaultValue="item-1"
             className="faq w-full"
           >

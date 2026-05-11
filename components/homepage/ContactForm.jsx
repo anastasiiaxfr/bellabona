@@ -56,7 +56,7 @@ async function ContactForm({ language }) {
             </article>
           </div>
           <div>
-            <h4 className="text-cstm-green-1">Schedule an appointment now</h4>
+            <h3 className="h4 text-cstm-green-1">Schedule an appointment now</h3>
             <Form />
           </div>
         </div>

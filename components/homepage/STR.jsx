@@ -32,7 +32,7 @@ async function STR() {
                 Step {index < 10 ? `0${index + 1}` : index + 1}
               </span>
 
-              <h4 className="text-xl mb-3">{step.title}</h4>
+              <h3 className="h4 text-xl mb-3">{step.title}</h3>
               <p>{step.description}</p>
             </article>
           ))}

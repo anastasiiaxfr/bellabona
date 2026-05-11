@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,7 +18,7 @@ function NavBar({ direction }) {
       <Link href="#">Daily lunch</Link>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Link href="#" className="flex gap-2 items-center">
+          <Link href="#" variant="ghost" className="flex gap-2 items-center">
             More <ChevronDown />
           </Link>
         </DropdownMenuTrigger>

@@ -22,7 +22,7 @@ async function Reviews() {
           alt=""
           width="400"
           height="400"
-          className="aspect-2/2 rounded-2xl object-cover object-center -ml-4 lg:-ml-10 min-h-[200px]"
+          className="w-full aspect-2/2 rounded-2xl object-cover object-center -ml-4 lg:-ml-10 min-h-[200px]"
         />
         <blockquote className="bg-cstm-green-1 text-white text-center p-4 sm:px-10 sm:py-30 rounded-xl grid h-full scale-110">
           <p className="text-sm sm:text-2xl lg:text-3xl [grid-area:_1_1_2_2] mb-10">
@@ -41,7 +41,7 @@ async function Reviews() {
           alt=""
           width="400"
           height="400"
-          className="aspect-2/2 rounded-2xl object-cover object-center ml-4 lg:ml-10 min-h-[200px]"
+          className="w-full aspect-2/2 rounded-2xl object-cover object-center ml-4 lg:ml-10 min-h-[200px]"
         />
       </div>
     </section>
