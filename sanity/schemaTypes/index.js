@@ -1,3 +1,4 @@
+import homepage from "./homepage";
 import homepageHero from "./homepageHero";
 import homepageFAQ from "./homepageFAQ";
 import homepageBrands from "./homepageBrands";
@@ -12,6 +13,7 @@ import homepageCTA from "./homepageCTA";
 
 export const schema = {
   types: [
+    homepage,
     homepageHero,
     homepageFAQ,
     homepageBrands,
