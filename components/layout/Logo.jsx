@@ -10,7 +10,7 @@ function Logo() {
         width="206"
         height="36"
         className="w-auto h-auto"
-        fetchPriority="hight"
+        priority
       />
     </Link>
   );

@@ -62,7 +62,6 @@ async function Hero({ language }) {
                 width={623}
                 height={697}
                 className="w-full aspect-square rounded-xl object-cover [grid-area:1/1/2/2] "
-                fetchpriority="high"
                 priority
               />
               <div className="[grid-area:1/1/2/2] xl:mt-auto grid grid-cols-3 items-center gap-4 justify-center p-6 mt-auto">

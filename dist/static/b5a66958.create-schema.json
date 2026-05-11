@@ -1,0 +1,3205 @@
+[
+  {
+    "options": {
+      "apiVersion": "2025-02-19",
+      "languages": [
+        {
+          "id": "en",
+          "title": "English"
+        },
+        {
+          "id": "de",
+          "title": "German"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "level": "error",
+        "rules": [
+          {
+            "flag": "custom"
+          }
+        ]
+      }
+    ],
+    "of": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "type": "internationalizedArrayReferenceValue",
+        "title": "Internationalized array reference"
+      }
+    ],
+    "name": "internationalizedArrayReference",
+    "type": "array",
+    "title": "Internationalized array"
+  },
+  {
+    "fields": [
+      {
+        "weak": true,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "to": [
+          {
+            "type": "home-brands"
+          },
+          {
+            "type": "home-contact-form"
+          },
+          {
+            "type": "home-cta"
+          },
+          {
+            "type": "home-faq"
+          },
+          {
+            "type": "home-features"
+          },
+          {
+            "type": "home-hero"
+          },
+          {
+            "type": "home-metrics"
+          },
+          {
+            "type": "home-review"
+          },
+          {
+            "type": "home-services"
+          },
+          {
+            "type": "home-stats"
+          },
+          {
+            "type": "home-steps"
+          }
+        ],
+        "name": "value",
+        "type": "reference"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "hidden": true,
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "name": "internationalizedArrayReferenceValue",
+    "type": "object",
+    "title": "Internationalized array reference"
+  },
+  {
+    "liveEdit": true,
+    "fields": [
+      {
+        "options": {
+          "apiVersion": "2025-02-19",
+          "languages": [
+            {
+              "id": "en",
+              "title": "English"
+            },
+            {
+              "id": "de",
+              "title": "German"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "translations",
+        "type": "internationalizedArrayReference"
+      },
+      {
+        "options": {
+          "list": [
+            "home-brands",
+            "home-contact-form",
+            "home-cta",
+            "home-faq",
+            "home-features",
+            "home-hero",
+            "home-metrics",
+            "home-review",
+            "home-services",
+            "home-stats",
+            "home-steps"
+          ]
+        },
+        "description": "Optional: Used to filter the reference fields above so all translations share the same types.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "readOnly": "conditional",
+        "name": "schemaTypes",
+        "type": "array"
+      }
+    ],
+    "name": "translation.metadata",
+    "type": "document",
+    "title": "Translation metadata"
+  },
+  {
+    "options": {
+      "apiVersion": "2025-10-15",
+      "select": {
+        "options": [
+          {
+            "title": "Europe"
+          },
+          {
+            "title": "Americas"
+          }
+        ]
+      },
+      "languages": [
+        {
+          "id": "en",
+          "title": "English"
+        },
+        {
+          "id": "de",
+          "title": "German"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "level": "error",
+        "rules": [
+          {
+            "flag": "custom"
+          }
+        ]
+      }
+    ],
+    "of": [
+      {
+        "type": "internationalizedArrayStringValue",
+        "title": "Internationalized array string"
+      }
+    ],
+    "name": "internationalizedArrayString",
+    "type": "array",
+    "title": "Internationalized array"
+  },
+  {
+    "fields": [
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "hidden": true,
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "name": "internationalizedArrayStringValue",
+    "type": "object",
+    "title": "Internationalized array string"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ],
+          "layout": "radio"
+        },
+        "initialValue": "en",
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "en",
+                  "de"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 5
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 150
+                  }
+                ]
+              }
+            ],
+            "name": "subtitle",
+            "type": "string"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "image",
+            "type": "image"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 2
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 50
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonText",
+            "type": "string",
+            "title": "Call to Action Button Text"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": true,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonLink",
+            "type": "url",
+            "title": "Call to Action Button Link"
+          }
+        ],
+        "name": "hero",
+        "type": "object",
+        "title": "Hero section"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  }
+                ]
+              }
+            ],
+            "of": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alt text"
+                  }
+                ],
+                "type": "image"
+              }
+            ],
+            "name": "images",
+            "type": "array"
+          }
+        ],
+        "name": "brands",
+        "type": "object",
+        "title": "Brands section"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 10
+                      }
+                    ]
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 50
+                      }
+                    ]
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "metrics",
+        "type": "array",
+        "title": "Metrics section"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 2
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 50
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonText",
+            "type": "string",
+            "title": "Call to Action Button Text"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": true,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonLink",
+            "type": "url",
+            "title": "Call to Action Button Link"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  }
+                ]
+              }
+            ],
+            "of": [
+              {
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 30
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "category",
+                    "type": "string"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 50
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "title",
+                    "type": "string"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 100
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "percentage",
+                    "type": "number"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 0
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "reviews",
+                    "type": "number"
+                  },
+                  {
+                    "options": {
+                      "hotspot": true
+                    },
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "image",
+                    "type": "image"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "services",
+            "type": "array"
+          }
+        ],
+        "name": "services",
+        "type": "object",
+        "title": "Services section"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  }
+                ]
+              }
+            ],
+            "of": [
+              {
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 10
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "value",
+                    "type": "string"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 50
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "title",
+                    "type": "string"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 100
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "description",
+                    "type": "string"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "stats",
+            "type": "array"
+          }
+        ],
+        "name": "stats",
+        "type": "object",
+        "title": "Stats section"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 2
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 50
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonText",
+            "type": "string",
+            "title": "Call to Action Button Text"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": true,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonLink",
+            "type": "url",
+            "title": "Call to Action Button Link"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  }
+                ]
+              }
+            ],
+            "of": [
+              {
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 50
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "title",
+                    "type": "string"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 10
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 200
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "description",
+                    "type": "text"
+                  },
+                  {
+                    "options": {
+                      "hotspot": true
+                    },
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "image",
+                    "type": "image"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "steps",
+            "type": "array"
+          }
+        ],
+        "name": "steps",
+        "type": "object",
+        "title": "Steps section"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 350
+                  }
+                ]
+              }
+            ],
+            "name": "cite",
+            "type": "text"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 50
+                  }
+                ]
+              }
+            ],
+            "name": "author",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 2
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "job",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  }
+                ]
+              }
+            ],
+            "of": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alt text"
+                  }
+                ],
+                "type": "image"
+              }
+            ],
+            "name": "images",
+            "type": "array"
+          }
+        ],
+        "name": "review",
+        "type": "object",
+        "title": "Review section"
+      },
+      {
+        "fields": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "image",
+            "type": "image"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 1
+                  }
+                ]
+              }
+            ],
+            "of": [
+              {
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 100
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "title",
+                    "type": "string"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 1
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 200
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "description",
+                    "type": "string"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "features",
+            "type": "array"
+          }
+        ],
+        "name": "features",
+        "type": "object",
+        "title": "Features section"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 5
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 150
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string",
+            "title": "Section Title"
+          },
+          {
+            "of": [
+              {
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          },
+                          {
+                            "flag": "min",
+                            "constraint": 2
+                          },
+                          {
+                            "flag": "max",
+                            "constraint": 300
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "term",
+                    "type": "string"
+                  },
+                  {
+                    "options": {
+                      "rows": 4
+                    },
+                    "validation": [
+                      {
+                        "level": "error",
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "answer",
+                    "type": "text"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "faqs",
+            "type": "array",
+            "title": "FAQ items"
+          }
+        ],
+        "name": "faq",
+        "type": "object",
+        "title": "FAQ section"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 5
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 150
+                  }
+                ]
+              }
+            ],
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "image",
+            "type": "image"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 2
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 50
+                  }
+                ]
+              }
+            ],
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 20
+                  }
+                ]
+              }
+            ],
+            "name": "phone",
+            "type": "string"
+          }
+        ],
+        "name": "contactForm",
+        "type": "object",
+        "title": "Contact form section"
+      },
+      {
+        "fields": [
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Success",
+                  "value": "success"
+                },
+                {
+                  "title": "Danger",
+                  "value": "danger"
+                }
+              ],
+              "layout": "radio"
+            },
+            "initialValue": "success",
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "valid",
+                    "constraint": [
+                      "success",
+                      "danger"
+                    ]
+                  },
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 100
+                  }
+                ]
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "min",
+                    "constraint": 10
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 400
+                  }
+                ]
+              }
+            ],
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "image",
+            "type": "image"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "min",
+                    "constraint": 2
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 50
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonText",
+            "type": "string",
+            "title": "Call to Action Button Text"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": true,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "name": "ctaButtonLink",
+            "type": "url",
+            "title": "Call to Action Button Link"
+          }
+        ],
+        "name": "cta",
+        "type": "object",
+        "title": "Homepage CTA section"
+      }
+    ],
+    "name": "home-page",
+    "type": "document",
+    "title": "Homepage"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 5
+              },
+              {
+                "flag": "max",
+                "constraint": 150
+              }
+            ]
+          }
+        ],
+        "name": "subtitle",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonText",
+        "type": "string",
+        "title": "Call to Action Button Text"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": true,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonLink",
+        "type": "url",
+        "title": "Call to Action Button Link"
+      }
+    ],
+    "name": "home-hero",
+    "type": "document",
+    "title": "Homepage Hero"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 5
+              },
+              {
+                "flag": "max",
+                "constraint": 150
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Section Title"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 2
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 300
+                      }
+                    ]
+                  }
+                ],
+                "name": "term",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "rows": 4
+                },
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "answer",
+                "type": "text"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "faqs",
+        "type": "array",
+        "title": "FAQ items"
+      }
+    ],
+    "name": "home-faq",
+    "type": "document",
+    "title": "Homepage FAQ"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Alt text"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "images",
+        "type": "array"
+      }
+    ],
+    "name": "home-brands",
+    "type": "document",
+    "title": "Homepage Brands"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 10
+                      }
+                    ]
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 50
+                      }
+                    ]
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "metrics",
+        "type": "array"
+      }
+    ],
+    "name": "home-metrics",
+    "type": "document",
+    "title": "Homepage Metrics"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonText",
+        "type": "string",
+        "title": "Call to Action Button Text"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": true,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonLink",
+        "type": "url",
+        "title": "Call to Action Button Link"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 30
+                      }
+                    ]
+                  }
+                ],
+                "name": "category",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 50
+                      }
+                    ]
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 100
+                      }
+                    ]
+                  }
+                ],
+                "name": "percentage",
+                "type": "number"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 0
+                      }
+                    ]
+                  }
+                ],
+                "name": "reviews",
+                "type": "number"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "image",
+                "type": "image"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "services",
+        "type": "array"
+      }
+    ],
+    "name": "home-services",
+    "type": "document",
+    "title": "Homepage Services"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 10
+                      }
+                    ]
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 50
+                      }
+                    ]
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 100
+                      }
+                    ]
+                  }
+                ],
+                "name": "description",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "stats",
+        "type": "array",
+        "title": "stats"
+      }
+    ],
+    "name": "home-stats",
+    "type": "document",
+    "title": "Homepage Stats"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonText",
+        "type": "string",
+        "title": "Call to Action Button Text"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": true,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonLink",
+        "type": "url",
+        "title": "Call to Action Button Link"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 50
+                      }
+                    ]
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 10
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 200
+                      }
+                    ]
+                  }
+                ],
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "image",
+                "type": "image"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "steps",
+        "type": "array"
+      }
+    ],
+    "name": "home-steps",
+    "type": "document",
+    "title": "Homepage Steps"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 350
+              }
+            ]
+          }
+        ],
+        "name": "cite",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ]
+          }
+        ],
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "job",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Alt text"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "images",
+        "type": "array"
+      }
+    ],
+    "name": "home-review",
+    "type": "document",
+    "title": "Homepage Review"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ]
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 100
+                      }
+                    ]
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 200
+                      }
+                    ]
+                  }
+                ],
+                "name": "description",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "features",
+        "type": "array"
+      }
+    ],
+    "name": "home-features",
+    "type": "document",
+    "title": "Homepage Features"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 5
+              },
+              {
+                "flag": "max",
+                "constraint": 150
+              }
+            ]
+          }
+        ],
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ]
+          }
+        ],
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 20
+              }
+            ]
+          }
+        ],
+        "name": "phone",
+        "type": "string"
+      }
+    ],
+    "name": "home-contact-form",
+    "type": "document",
+    "title": "Homepage contact form"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            }
+          ]
+        },
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Success",
+              "value": "success"
+            },
+            {
+              "title": "Danger",
+              "value": "danger"
+            }
+          ],
+          "layout": "radio"
+        },
+        "initialValue": "success",
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "success",
+                  "danger"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 10
+              },
+              {
+                "flag": "max",
+                "constraint": 400
+              }
+            ]
+          }
+        ],
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonText",
+        "type": "string",
+        "title": "Call to Action Button Text"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": true,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "ctaButtonLink",
+        "type": "url",
+        "title": "Call to Action Button Link"
+      }
+    ],
+    "name": "home-cta",
+    "type": "document",
+    "title": "Homepage CTA"
+  }
+]

@@ -18,6 +18,7 @@ export default defineConfig({
   projectId,
   dataset,
   schema,
+  title: "BellaBona",
   plugins: [
     structureTool({ structure }),
     // Vision is for querying with GROQ from inside the Studio
